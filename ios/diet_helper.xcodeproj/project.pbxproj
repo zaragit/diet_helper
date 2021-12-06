@@ -96,6 +96,14 @@
 			name = diet_helper;
 			sourceTree = "<group>";
 		};
+		2CE653BB088E4F20A52123B0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +130,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				F6943C4EC118677960B565D7 /* Pods */,
+				2CE653BB088E4F20A52123B0 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
