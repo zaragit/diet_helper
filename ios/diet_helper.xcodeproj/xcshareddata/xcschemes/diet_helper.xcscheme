@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "diet_helper2.app"
-               BlueprintName = "diet_helper2"
-               ReferencedContainer = "container:diet_helper2.xcodeproj">
+               BuildableName = "diet_helper.app"
+               BlueprintName = "diet_helper"
+               ReferencedContainer = "container:diet_helper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "diet_helper2Tests.xctest"
-               BlueprintName = "diet_helper2Tests"
-               ReferencedContainer = "container:diet_helper2.xcodeproj">
+               BuildableName = "diet_helperTests.xctest"
+               BlueprintName = "diet_helperTests"
+               ReferencedContainer = "container:diet_helper.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "diet_helper2.app"
-            BlueprintName = "diet_helper2"
-            ReferencedContainer = "container:diet_helper2.xcodeproj">
+            BuildableName = "diet_helper.app"
+            BlueprintName = "diet_helper"
+            ReferencedContainer = "container:diet_helper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "diet_helper2.app"
-            BlueprintName = "diet_helper2"
-            ReferencedContainer = "container:diet_helper2.xcodeproj">
+            BuildableName = "diet_helper.app"
+            BlueprintName = "diet_helper"
+            ReferencedContainer = "container:diet_helper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

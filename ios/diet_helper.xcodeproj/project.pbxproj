@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* diet_helper2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* diet_helper2Tests.m */; };
+		00E356F31AD99517003FC87E /* diet_helperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* diet_helperTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7E098F1597C38AAFB6620E65 /* libPods-diet_helper2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E031C0E8A5905800EF2426DC /* libPods-diet_helper2.a */; };
+		7E098F1597C38AAFB6620E65 /* libPods-diet_helper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E031C0E8A5905800EF2426DC /* libPods-diet_helper.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		CDB0338A97EFFB3131701760 /* libPods-diet_helper2-diet_helper2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9A4396703F81306B07FB71 /* libPods-diet_helper2-diet_helper2Tests.a */; };
+		CDB0338A97EFFB3131701760 /* libPods-diet_helper-diet_helperTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9A4396703F81306B07FB71 /* libPods-diet_helper-diet_helperTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,27 +22,27 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = diet_helper2;
+			remoteInfo = diet_helper;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* diet_helper2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = diet_helper2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* diet_helperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = diet_helperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* diet_helper2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = diet_helper2Tests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* diet_helper2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diet_helper2.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = diet_helper2/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = diet_helper2/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = diet_helper2/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = diet_helper2/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = diet_helper2/main.m; sourceTree = "<group>"; };
-		2C9A4396703F81306B07FB71 /* libPods-diet_helper2-diet_helper2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-diet_helper2-diet_helper2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		48A7284291BCD88204DA0388 /* Pods-diet_helper2-diet_helper2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diet_helper2-diet_helper2Tests.release.xcconfig"; path = "Target Support Files/Pods-diet_helper2-diet_helper2Tests/Pods-diet_helper2-diet_helper2Tests.release.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = diet_helper2/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8AB76D88614058DD489D5C2F /* Pods-diet_helper2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diet_helper2.release.xcconfig"; path = "Target Support Files/Pods-diet_helper2/Pods-diet_helper2.release.xcconfig"; sourceTree = "<group>"; };
-		AB13EF989A9799436E012FEB /* Pods-diet_helper2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diet_helper2.debug.xcconfig"; path = "Target Support Files/Pods-diet_helper2/Pods-diet_helper2.debug.xcconfig"; sourceTree = "<group>"; };
-		B8396CB1E9F9E3ABFF996334 /* Pods-diet_helper2-diet_helper2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diet_helper2-diet_helper2Tests.debug.xcconfig"; path = "Target Support Files/Pods-diet_helper2-diet_helper2Tests/Pods-diet_helper2-diet_helper2Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		E031C0E8A5905800EF2426DC /* libPods-diet_helper2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-diet_helper2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F21AD99517003FC87E /* diet_helperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = diet_helperTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* diet_helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diet_helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = diet_helper/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = diet_helper/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = diet_helper/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = diet_helper/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = diet_helper/main.m; sourceTree = "<group>"; };
+		2C9A4396703F81306B07FB71 /* libPods-diet_helper-diet_helperTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-diet_helper-diet_helperTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48A7284291BCD88204DA0388 /* Pods-diet_helper-diet_helperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diet_helper-diet_helperTests.release.xcconfig"; path = "Target Support Files/Pods-diet_helper-diet_helperTests/Pods-diet_helper-diet_helperTests.release.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = diet_helper/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8AB76D88614058DD489D5C2F /* Pods-diet_helper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diet_helper.release.xcconfig"; path = "Target Support Files/Pods-diet_helper/Pods-diet_helper.release.xcconfig"; sourceTree = "<group>"; };
+		AB13EF989A9799436E012FEB /* Pods-diet_helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diet_helper.debug.xcconfig"; path = "Target Support Files/Pods-diet_helper/Pods-diet_helper.debug.xcconfig"; sourceTree = "<group>"; };
+		B8396CB1E9F9E3ABFF996334 /* Pods-diet_helper-diet_helperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-diet_helper-diet_helperTests.debug.xcconfig"; path = "Target Support Files/Pods-diet_helper-diet_helperTests/Pods-diet_helper-diet_helperTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E031C0E8A5905800EF2426DC /* libPods-diet_helper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-diet_helper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDB0338A97EFFB3131701760 /* libPods-diet_helper2-diet_helper2Tests.a in Frameworks */,
+				CDB0338A97EFFB3131701760 /* libPods-diet_helper-diet_helperTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,20 +59,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E098F1597C38AAFB6620E65 /* libPods-diet_helper2.a in Frameworks */,
+				7E098F1597C38AAFB6620E65 /* libPods-diet_helper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* diet_helper2Tests */ = {
+		00E356EF1AD99517003FC87E /* diet_helperTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* diet_helper2Tests.m */,
+				00E356F21AD99517003FC87E /* diet_helperTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = diet_helper2Tests;
+			path = diet_helperTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -83,7 +83,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* diet_helper2 */ = {
+		13B07FAE1A68108700A75B9A /* diet_helper */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -93,15 +93,15 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = diet_helper2;
+			name = diet_helper;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				E031C0E8A5905800EF2426DC /* libPods-diet_helper2.a */,
-				2C9A4396703F81306B07FB71 /* libPods-diet_helper2-diet_helper2Tests.a */,
+				E031C0E8A5905800EF2426DC /* libPods-diet_helper.a */,
+				2C9A4396703F81306B07FB71 /* libPods-diet_helper-diet_helperTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,9 +116,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* diet_helper2 */,
+				13B07FAE1A68108700A75B9A /* diet_helper */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* diet_helper2Tests */,
+				00E356EF1AD99517003FC87E /* diet_helperTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				F6943C4EC118677960B565D7 /* Pods */,
@@ -131,8 +131,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* diet_helper2.app */,
-				00E356EE1AD99517003FC87E /* diet_helper2Tests.xctest */,
+				13B07F961A680F5B00A75B9A /* diet_helper.app */,
+				00E356EE1AD99517003FC87E /* diet_helperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,10 +140,10 @@
 		F6943C4EC118677960B565D7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AB13EF989A9799436E012FEB /* Pods-diet_helper2.debug.xcconfig */,
-				8AB76D88614058DD489D5C2F /* Pods-diet_helper2.release.xcconfig */,
-				B8396CB1E9F9E3ABFF996334 /* Pods-diet_helper2-diet_helper2Tests.debug.xcconfig */,
-				48A7284291BCD88204DA0388 /* Pods-diet_helper2-diet_helper2Tests.release.xcconfig */,
+				AB13EF989A9799436E012FEB /* Pods-diet_helper.debug.xcconfig */,
+				8AB76D88614058DD489D5C2F /* Pods-diet_helper.release.xcconfig */,
+				B8396CB1E9F9E3ABFF996334 /* Pods-diet_helper-diet_helperTests.debug.xcconfig */,
+				48A7284291BCD88204DA0388 /* Pods-diet_helper-diet_helperTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -152,9 +152,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* diet_helper2Tests */ = {
+		00E356ED1AD99517003FC87E /* diet_helperTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "diet_helper2Tests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "diet_helperTests" */;
 			buildPhases = (
 				56C87C21F49469198D38B391 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -168,14 +168,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = diet_helper2Tests;
-			productName = diet_helper2Tests;
-			productReference = 00E356EE1AD99517003FC87E /* diet_helper2Tests.xctest */;
+			name = diet_helperTests;
+			productName = diet_helperTests;
+			productReference = 00E356EE1AD99517003FC87E /* diet_helperTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* diet_helper2 */ = {
+		13B07F861A680F5B00A75B9A /* diet_helper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "diet_helper2" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "diet_helper" */;
 			buildPhases = (
 				B97872762FA74E871F8FEBA3 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -190,9 +190,9 @@
 			);
 			dependencies = (
 			);
-			name = diet_helper2;
-			productName = diet_helper2;
-			productReference = 13B07F961A680F5B00A75B9A /* diet_helper2.app */;
+			name = diet_helper;
+			productName = diet_helper;
+			productReference = 13B07F961A680F5B00A75B9A /* diet_helper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -212,7 +212,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "diet_helper2" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "diet_helper" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -225,8 +225,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* diet_helper2 */,
-				00E356ED1AD99517003FC87E /* diet_helper2Tests */,
+				13B07F861A680F5B00A75B9A /* diet_helper */,
+				00E356ED1AD99517003FC87E /* diet_helperTests */,
 			);
 		};
 /* End PBXProject section */
@@ -280,7 +280,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-diet_helper2-diet_helper2Tests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-diet_helper-diet_helperTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -293,15 +293,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-diet_helper2/Pods-diet_helper2-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-diet_helper/Pods-diet_helper-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-diet_helper2/Pods-diet_helper2-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-diet_helper/Pods-diet_helper-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-diet_helper2/Pods-diet_helper2-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-diet_helper/Pods-diet_helper-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B97872762FA74E871F8FEBA3 /* [CP] Check Pods Manifest.lock */ = {
@@ -319,7 +319,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-diet_helper2-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-diet_helper-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -332,15 +332,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-diet_helper2/Pods-diet_helper2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-diet_helper/Pods-diet_helper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-diet_helper2/Pods-diet_helper2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-diet_helper/Pods-diet_helper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-diet_helper2/Pods-diet_helper2-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-diet_helper/Pods-diet_helper-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C541C4B663F7B27201FD7686 /* [CP] Copy Pods Resources */ = {
@@ -349,15 +349,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-diet_helper2-diet_helper2Tests/Pods-diet_helper2-diet_helper2Tests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-diet_helper-diet_helperTests/Pods-diet_helper-diet_helperTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-diet_helper2-diet_helper2Tests/Pods-diet_helper2-diet_helper2Tests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-diet_helper-diet_helperTests/Pods-diet_helper-diet_helperTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-diet_helper2-diet_helper2Tests/Pods-diet_helper2-diet_helper2Tests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-diet_helper-diet_helperTests/Pods-diet_helper-diet_helperTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -385,15 +385,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-diet_helper2-diet_helper2Tests/Pods-diet_helper2-diet_helper2Tests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-diet_helper-diet_helperTests/Pods-diet_helper-diet_helperTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-diet_helper2-diet_helper2Tests/Pods-diet_helper2-diet_helper2Tests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-diet_helper-diet_helperTests/Pods-diet_helper-diet_helperTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-diet_helper2-diet_helper2Tests/Pods-diet_helper2-diet_helper2Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-diet_helper-diet_helperTests/Pods-diet_helper-diet_helperTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -403,7 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* diet_helper2Tests.m in Sources */,
+				00E356F31AD99517003FC87E /* diet_helperTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +421,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* diet_helper2 */;
+			target = 13B07F861A680F5B00A75B9A /* diet_helper */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -429,14 +429,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8396CB1E9F9E3ABFF996334 /* Pods-diet_helper2-diet_helper2Tests.debug.xcconfig */;
+			baseConfigurationReference = B8396CB1E9F9E3ABFF996334 /* Pods-diet_helper-diet_helperTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = diet_helper2Tests/Info.plist;
+				INFOPLIST_FILE = diet_helperTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,17 +450,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/diet_helper2.app/diet_helper2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/diet_helper.app/diet_helper";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48A7284291BCD88204DA0388 /* Pods-diet_helper2-diet_helper2Tests.release.xcconfig */;
+			baseConfigurationReference = 48A7284291BCD88204DA0388 /* Pods-diet_helper-diet_helperTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = diet_helper2Tests/Info.plist;
+				INFOPLIST_FILE = diet_helperTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -474,19 +474,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/diet_helper2.app/diet_helper2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/diet_helper.app/diet_helper";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB13EF989A9799436E012FEB /* Pods-diet_helper2.debug.xcconfig */;
+			baseConfigurationReference = AB13EF989A9799436E012FEB /* Pods-diet_helper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = diet_helper2/Info.plist;
+				INFOPLIST_FILE = diet_helper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,7 +497,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = diet_helper2;
+				PRODUCT_NAME = diet_helper;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -506,12 +506,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8AB76D88614058DD489D5C2F /* Pods-diet_helper2.release.xcconfig */;
+			baseConfigurationReference = 8AB76D88614058DD489D5C2F /* Pods-diet_helper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = diet_helper2/Info.plist;
+				INFOPLIST_FILE = diet_helper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -522,7 +522,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = diet_helper2;
+				PRODUCT_NAME = diet_helper;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -656,7 +656,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "diet_helper2Tests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "diet_helperTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -665,7 +665,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "diet_helper2" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "diet_helper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -674,7 +674,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "diet_helper2" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "diet_helper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

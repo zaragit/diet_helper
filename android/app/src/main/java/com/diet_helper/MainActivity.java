@@ -1,4 +1,4 @@
-package com.diet_helper2;
+package com.diet_helper;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "diet_helper2";
+    return "diet_helper";
   }
 }
