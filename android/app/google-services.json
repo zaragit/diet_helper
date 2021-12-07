@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "150039580803",
+    "project_id": "diet-helper-a0fca",
+    "storage_bucket": "diet-helper-a0fca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150039580803:android:bf4e664540239a03bf4bb6",
+        "android_client_info": {
+          "package_name": "com.diet_helper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "150039580803-qaiqr3jlg52smg466mdohvdol20r06lm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.diet_helper",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "150039580803-rm5u2lt6nimolhg4n35303k67u453jnn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVuU_BNo81KJvuqUjg1vRKDlYGLhPWKwQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "150039580803-rm5u2lt6nimolhg4n35303k67u453jnn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

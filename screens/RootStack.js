@@ -1,29 +1,33 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import MainTab from './MainTab';
-import LoginScreen from './LoginScreen';
-import JoinScreen from './JoinScreen';
+import {useUserContext} from '../contexts/UserContext';
+import SignScreen from './SignScreen';
 
 const Stack = createNativeStackNavigator();
 
 function RootStack() {
+  const {user} = useUserContext();
+
   return (
     <Stack.Navigator initialRouteName="MainTab">
-      <Stack.Screen
-        name="Login"
-        component={LoginScreen}
-        options={{headerBackVisible: false}}
-      />
-      <Stack.Screen
-        name="Join"
-        component={JoinScreen}
-        options={{headerBackVisible: false}}
-      />
-      <Stack.Screen
-        name="MainTab"
-        component={MainTab}
-        options={{headerShown: false}}
-      />
+      {user ? (
+        <>
+          <Stack.Screen
+            name="MainTab"
+            component={MainTab}
+            options={{headerShown: false}}
+          />
+        </>
+      ) : (
+        <>
+          <Stack.Screen
+            name="Sign"
+            component={SignScreen}
+            options={{headerShown: false}}
+          />
+        </>
+      )}
     </Stack.Navigator>
   );
 }
