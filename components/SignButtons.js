@@ -1,51 +1,54 @@
 import {useNavigation} from '@react-navigation/core';
-import React from 'react';
+import React, {useCallback} from 'react';
 import {ActivityIndicator, StyleSheet, View} from 'react-native';
 import {Button} from 'react-native-elements';
 
-const SignButtons = ({isSignUp, onSubmit, loading}) => {
+export default function SignButtons({isSignUp, onSubmit, loading}) {
   const navigation = useNavigation();
 
   const primaryTitle = isSignUp ? '회원가입' : '로그인';
   const secondaryTitle = isSignUp ? '로그인' : '회원가입';
 
-  const onSecondaryButtonPress = () => {
-    if (isSignUp) {
-      navigation.goBack();
-    } else {
-      navigation.push('Sign', {isSignUp: true});
-    }
-  };
+  const onSecondaryButtonPress = useCallback(
+    () =>
+      isSignUp
+        ? navigation.goBack()
+        : navigation.push('Sign', {isSignUp: true}),
+    [isSignUp, navigation],
+  );
 
   if (loading) {
     return (
       <View style={styles.spinnerWrapper}>
-        <ActivityIndicator size={32} color="#6200ee" />
+        <ActivityIndicator size={32} color="#357a38" />
       </View>
     );
   }
 
   return (
-    <View style={styles.buttons}>
+    <View style={styles.buttonWrapper}>
       <Button
-        buttonStyle={{backgroundColor: '#357a38'}}
-        style={styles.buttonLogin}
         title={primaryTitle}
+        style={styles.button}
+        buttonStyle={styles.buttonColor}
         onPress={onSubmit}
       />
       <Button
-        buttonStyle={{backgroundColor: '#357a38'}}
-        style={styles.buttonLogin}
         title={secondaryTitle}
+        style={styles.button}
+        buttonStyle={styles.buttonColor}
         onPress={onSecondaryButtonPress}
       />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  buttons: {
-    marginTop: 64,
+  buttonWrapper: {
+    width: 240,
+  },
+  button: {
+    marginBottom: 10,
   },
   spinnerWrapper: {
     marginTop: 64,
@@ -53,6 +56,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  buttonColor: {
+    backgroundColor: '#357a38',
+  },
 });
-
-export default SignButtons;

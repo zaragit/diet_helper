@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 import {Input} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const CustomInput = ({name, placeholder, ...rest}, ref) => {
+function CustomInput({name, placeholder, ...rest}, ref) {
   return (
     <Input
       placeholder={placeholder}
@@ -14,7 +14,7 @@ const CustomInput = ({name, placeholder, ...rest}, ref) => {
       ref={ref}
     />
   );
-};
+}
 
 const styles = StyleSheet.create({
   marginRight: {

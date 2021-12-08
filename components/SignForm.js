@@ -2,7 +2,12 @@ import React, {useRef} from 'react';
 import {StyleSheet, View} from 'react-native';
 import CustomInput from './CustomInput';
 
-const SignForm = ({isSignUp, onSubmit, form, createChangeTextHandler}) => {
+export default function SignForm({
+  isSignUp,
+  onSubmit,
+  form,
+  createChangeTextHandler,
+}) {
   const passwordRef = useRef();
   const confirmPasswordRef = useRef();
 
@@ -50,17 +55,10 @@ const SignForm = ({isSignUp, onSubmit, form, createChangeTextHandler}) => {
       </View>
     </>
   );
-};
+}
 
 const styles = StyleSheet.create({
   inputWrapper: {
     width: 270,
-    marginBottom: 10,
-  },
-  buttonLogin: {
-    width: 260,
-    marginBottom: 10,
   },
 });
-
-export default SignForm;

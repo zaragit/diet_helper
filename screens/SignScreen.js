@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {
   Alert,
   Keyboard,
@@ -14,7 +14,10 @@ import {useUserContext} from '../contexts/UserContext';
 import {signIn, signUp} from '../lib/auth';
 import {getUser} from '../lib/users';
 
-const SignScreen = ({navigation, route}) => {
+/**
+ * 로그인, 회원가입 화면
+ */
+export default function SignScreen({navigation, route}) {
   const [form, setForm] = useState({
     email: '',
     password: '',
@@ -25,48 +28,43 @@ const SignScreen = ({navigation, route}) => {
   const {isSignUp} = route.params ?? {};
   const {setUser} = useUserContext();
 
-  const createChangeTextHandler = name => value => {
-    setForm({...form, [name]: value});
-  };
+  const createChangeTextHandler = useCallback(
+    name => value => {
+      setForm({...form, [name]: value});
+    },
+    [form],
+  );
 
-  const onSubmit = async () => {
+  const onSubmit = useCallback(async () => {
     Keyboard.dismiss();
 
     const {email, password, confirmPassword} = form;
 
+    // 회원가입 화면에서 (비밀번호, 비밀번호 확인) 불일치 확인
     if (isSignUp && password !== confirmPassword) {
       Alert.alert('실패', '비밀번호가 일치하지 않습니다.');
       return;
     }
 
-    setLoading(true);
-    const info = {email, password};
-
     try {
+      setLoading(true);
+
+      const info = {email, password};
       const {user} = isSignUp ? await signUp(info) : await signIn(info);
-      console.log(user);
       const profile = await getUser(user.uid);
 
-      console.log(profile);
-      if (!profile) {
-        navigation.navigate('Welcome', {uid: user.uid});
-      } else {
-        setUser(profile);
-      }
-    } catch (e) {
-      const messages = {
-        'auth/email-already-in-use': '이미 가입된 이메일입니다.',
-        'auth/wrong-password': '잘못된 비밀번호입니다.',
-        'auth/user-root-found': '존재하지 않는 계정입니다.',
-        'auth/invalid-email': '유효하지 않은 이메일 주소입니다.',
-      };
-
-      const msg = messages[e.code] || `${isSignUp ? '가입' : '로그인'} 실패`;
-      Alert.alert('실패', msg);
+      /**
+       * 프로필 설정 or 로그인
+       */
+      profile
+        ? setUser(profile)
+        : navigation.navigate('Welcome', {uid: user.uid});
+    } catch ({code}) {
+      Alert.alert('실패', getErrorMassage(code, isSignUp));
     } finally {
       setLoading(false);
     }
-  };
+  }, [form, isSignUp, navigation, setUser]);
 
   return (
     <KeyboardAvoidingView
@@ -77,6 +75,7 @@ const SignScreen = ({navigation, route}) => {
         <SignForm
           form={form}
           isSignUp={isSignUp}
+          onSubmit={onSubmit}
           createChangeTextHandler={createChangeTextHandler}
         />
         <SignButtons
@@ -87,7 +86,7 @@ const SignScreen = ({navigation, route}) => {
       </SafeAreaView>
     </KeyboardAvoidingView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   keyboardAvoidingView: {
@@ -105,4 +104,24 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignScreen;
+/**
+ * 에러 코드에 따라 적절한 출력 메시지를 반환하는 메소드
+ *
+ * @param {*} code - Error 코드
+ * @param {*} isSignUp - 로그인 화면
+ * @returns - 출력 메시지
+ */
+const getErrorMassage = (code, isSignUp) => {
+  switch (code) {
+    case 'auth/email-already-in-use':
+      return '이미 가입된 이메일입니다.';
+    case 'auth/wrong-password':
+      return '잘못된 비밀번호입니다.';
+    case 'auth/user-root-found':
+      return '존재하지 않는 계정입니다.';
+    case 'auth/invalid-email':
+      return '유효하지 않은 이메일 주소입니다.';
+    default:
+      return `${isSignUp ? '가입' : '로그인'} 실패`;
+  }
+};

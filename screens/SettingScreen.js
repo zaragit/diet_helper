@@ -7,7 +7,7 @@ export default function SettingScreen() {
   return (
     <View>
       <Text>SettingScreen</Text>
-      <Button title="Login" onPress={() => navigation.navigate('Login')} />
+      <Button title="로그인 화면" onPress={() => navigation.navigate('Sign')} />
     </View>
   );
 }
