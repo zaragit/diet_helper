@@ -4,11 +4,11 @@ import {AnimatedCircularProgress} from 'react-native-circular-progress';
 import {Text} from 'react-native-elements';
 import WaveFunc from './WaveFunc';
 
-export default function MainCalorieProgress({calorie}) {
+export default function MainCalorieProgress() {
+  const calorie = 2000;
   const [H, setH] = useState(0);
 
   const addH = () => {
-    console.log(H);
     if (H + 10 >= 200) {
       setH(10);
       return;

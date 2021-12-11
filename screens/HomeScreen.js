@@ -1,83 +1,99 @@
-import React, {useState} from 'react';
-import {StyleSheet, useWindowDimensions, View} from 'react-native';
+import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
+import React from 'react';
+import {Pressable, StyleSheet, useWindowDimensions, View} from 'react-native';
+import {Text} from 'react-native-elements';
 import BlockView from '../components/BlockView';
-import DetailLayout from './layouts/DetailLayout';
-import GraphLayout from './layouts/GraphLayout';
+import GraphSwiper from '../components/GraphSwiper';
+import NutrientsProgress from '../components/NutrientsProgress';
+
+function HalfBlock({style, children}) {
+  const dimensions = useWindowDimensions();
+  const tabBarHeight = useBottomTabBarHeight();
+
+  const homeScreenWidth = dimensions.width;
+  const homeScreenHeight = dimensions.height - tabBarHeight;
+  const commonStyle = {width: homeScreenWidth, height: homeScreenHeight / 2};
+
+  return <BlockView style={[commonStyle, style]}>{children}</BlockView>;
+}
+
+function HalfBlockWithCover({styleName, children}) {
+  return (
+    <HalfBlock style={styles[styleName]}>
+      <HalfBlock style={styles[styleName + 'Cover']} />
+      {children}
+    </HalfBlock>
+  );
+}
 
 export default function HomeScreen() {
-  const [calorie, setCalorie] = useState(2000);
-  const {width, height} = useWindowDimensions();
-
   return (
-    <>
-      <BlockView>
-        <View style={[styles.top, {width, height: height / 2}]}>
-          <View style={[styles.topCover, {width, height: height / 2}]} />
-          <GraphLayout calorie={calorie} />
+    <BlockView>
+      <HalfBlockWithCover styleName="top">
+        <GraphSwiper />
+      </HalfBlockWithCover>
+      <HalfBlockWithCover styleName="bottom">
+        <View style={styles.navigator}>
+          <Pressable>
+            <View
+              style={[styles.navigatorButton, {backgroundColor: '#834bff'}]}
+            />
+          </Pressable>
+          <Pressable>
+            <View
+              style={[styles.navigatorButton, {backgroundColor: '#2196f3'}]}
+            />
+          </Pressable>
+          <Pressable>
+            <View
+              style={[styles.navigatorButton, {backgroundColor: '#26a69a'}]}
+            />
+          </Pressable>
         </View>
-        <View style={[styles.bottom, {width, height: height / 2}]}>
-          <View style={[styles.bottomCover, {width, height: height / 2}]} />
-          <DetailLayout />
-        </View>
-      </BlockView>
-    </>
+        <NutrientsProgress />
+      </HalfBlockWithCover>
+    </BlockView>
   );
 }
 
 const styles = StyleSheet.create({
   top: {
     backgroundColor: '#ffffff',
-    top: 0,
     alignItems: 'center',
     justifyContent: 'center',
   },
   topCover: {
     position: 'absolute',
     backgroundColor: '#834bff',
-    borderBottomLeftRadius: 70,
+    borderBottomLeftRadius: 80,
     zIndex: -1,
   },
   bottom: {
-    bottom: 0,
     backgroundColor: '#834bff',
   },
   bottomCover: {
     position: 'absolute',
     backgroundColor: '#ffffff',
-    borderTopRightRadius: 70,
+    borderTopRightRadius: 80,
     zIndex: -1,
   },
-  // top: {
-  //   position: 'absolute',
-  //   width: width,
-  //   height: topHeight,
-  //   backgroundColor: '#ffffff',
-  //   zIndex: -1,
-  // },
-  // top2: {
-  //   position: 'absolute',
-  //   width: width,
-  //   height: topHeight,
-  //   // backgroundColor: '#834bff',
-  //   backgroundColor: 'red',
-  //   borderBottomLeftRadius: 70,
-  //   zIndex: 0,
-  // },
-  // bottom: {
-  //   position: 'absolute',
-  //   width: width,
-  //   height: bottomHeight,
-  //   top: topHeight,
-  //   backgroundColor: '#834bff',
-  //   zIndex: -1,
-  // },
-  // bottom2: {
-  //   position: 'absolute',
-  //   width: width,
-  //   height: bottomHeight,
-  //   top: topHeight,
-  //   backgroundColor: '#ffffff',
-  //   borderTopRightRadius: 70,
-  //   zIndex: -1,
-  // },
+  navigator: {
+    position: 'absolute',
+    width: 250,
+    height: 100,
+    top: -50,
+    backgroundColor: '#ffffff',
+    borderWidth: 10,
+    borderColor: '#834bff',
+    borderRadius: 30,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 30,
+  },
+  navigatorButton: {
+    width: 35,
+    height: 35,
+    borderRadius: 5,
+  },
 });

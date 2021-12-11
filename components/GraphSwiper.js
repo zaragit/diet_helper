@@ -1,16 +1,15 @@
 import React from 'react';
-import {Dimensions, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {Text} from 'react-native-elements';
 import Swiper from 'react-native-swiper';
 import MainCalorieProgress from './MainCalorieProgress';
-import WaveTest from './WaveTest';
 
-export default function GraphSwiper({calorie}) {
+export default function GraphSwiper() {
   return (
-    <Swiper style={styles.wrapper} showsButtons loop={false}>
+    <Swiper showsButtons loop={false}>
       <View testID="Hello" style={styles.slide1}>
         <Text style={styles.text}>Calorie</Text>
-        <MainCalorieProgress calorie={calorie} />
+        <MainCalorieProgress />
       </View>
     </Swiper>
   );
