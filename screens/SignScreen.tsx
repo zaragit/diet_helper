@@ -13,23 +13,30 @@ import SignForm from '../components/SignForm';
 import {useUserContext} from '../contexts/UserContext';
 import {signIn, signUp} from '../lib/auth';
 import {getUser} from '../lib/users';
+import {MainTabNavigationProp} from './MainTab';
 
 /**
  * 로그인, 회원가입 화면
  */
-export default function SignScreen({navigation, route}) {
+export default function SignScreen({
+  navigation,
+  route,
+}: {
+  navigation: MainTabNavigationProp;
+  route: any;
+}) {
   const [form, setForm] = useState({
     email: '',
     password: '',
     confirmPassword: '',
   });
-  const [loading, setLoading] = useState();
+  const [loading, setLoading] = useState<boolean>(false);
 
   const {isSignUp} = route.params ?? {};
   const {setUser} = useUserContext();
 
   const createChangeTextHandler = useCallback(
-    name => value => {
+    name => (value: string) => {
       setForm({...form, [name]: value});
     },
     [form],
@@ -58,9 +65,9 @@ export default function SignScreen({navigation, route}) {
        */
       profile
         ? setUser(profile)
-        : navigation.navigate('Welcome', {uid: user.uid});
-    } catch ({code}) {
-      Alert.alert('실패', getErrorMassage(code, isSignUp));
+        : navigation.navigate('Welcome', {id: user.uid});
+    } catch (e: any) {
+      Alert.alert('실패', getErrorMassage(e.code, isSignUp));
     } finally {
       setLoading(false);
     }
@@ -111,7 +118,7 @@ const styles = StyleSheet.create({
  * @param {*} isSignUp - 로그인 화면
  * @returns - 출력 메시지
  */
-const getErrorMassage = (code, isSignUp) => {
+const getErrorMassage = (code: string, isSignUp: boolean) => {
   switch (code) {
     case 'auth/email-already-in-use':
       return '이미 가입된 이메일입니다.';

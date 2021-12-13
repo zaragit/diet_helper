@@ -2,9 +2,16 @@ import {useNavigation} from '@react-navigation/core';
 import React, {useCallback} from 'react';
 import {ActivityIndicator, StyleSheet, View} from 'react-native';
 import {Button} from 'react-native-elements';
+import {RootStackNavigationProp} from '../screens/RootStack';
 
-export default function SignButtons({isSignUp, onSubmit, loading}) {
-  const navigation = useNavigation();
+interface Props {
+  isSignUp: boolean;
+  onSubmit: () => void;
+  loading: boolean;
+}
+
+export default function SignButtons({isSignUp, onSubmit, loading}: Props) {
+  const navigation = useNavigation<RootStackNavigationProp>();
 
   const primaryTitle = isSignUp ? '회원가입' : '로그인';
   const secondaryTitle = isSignUp ? '로그인' : '회원가입';

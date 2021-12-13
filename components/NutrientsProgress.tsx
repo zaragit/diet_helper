@@ -34,7 +34,14 @@ const SAMPLE_DATA = [
   },
 ];
 
-function ProgressBar({name, color, progress, gram}) {
+interface Props {
+  name: string;
+  color: string;
+  progress: number;
+  gram: number;
+}
+
+function ProgressBar({name, color, progress, gram}: Props) {
   return (
     <View style={styles.progress}>
       <Text style={styles.title}>{name}</Text>

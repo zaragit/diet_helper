@@ -1,12 +1,27 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {
+  BottomTabNavigationProp,
+  createBottomTabNavigator,
+} from '@react-navigation/bottom-tabs';
+import {CompositeNavigationProp} from '@react-navigation/native';
 import React from 'react';
 import {StatusBar} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import AddButton from '../components/AddButton';
 import HomeScreen from './HomeScreen';
+import {RootStackNavigationProp} from './RootStack';
 import SettingScreen from './SettingScreen';
 
-const Tab = createBottomTabNavigator();
+export type MainTabParamList = {
+  Home: undefined;
+  Setting: undefined;
+};
+
+export type MainTabNavigationProp = CompositeNavigationProp<
+  RootStackNavigationProp,
+  BottomTabNavigationProp<MainTabParamList>
+>;
+
+const Tab = createBottomTabNavigator<MainTabParamList>();
 
 export default function MainTab() {
   return (

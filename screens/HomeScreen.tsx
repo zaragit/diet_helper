@@ -1,12 +1,18 @@
 import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
 import React from 'react';
 import {Pressable, StyleSheet, useWindowDimensions, View} from 'react-native';
-import {Text} from 'react-native-elements';
 import BlockView from '../components/BlockView';
 import GraphSwiper from '../components/GraphSwiper';
 import NutrientsProgress from '../components/NutrientsProgress';
+import {StyleProps, Styles} from '../types';
 
-function HalfBlock({style, children}) {
+function HalfBlock({
+  style,
+  children,
+}: {
+  style: Styles;
+  children?: React.ReactNode;
+}) {
   const dimensions = useWindowDimensions();
   const tabBarHeight = useBottomTabBarHeight();
 
@@ -17,7 +23,13 @@ function HalfBlock({style, children}) {
   return <BlockView style={[commonStyle, style]}>{children}</BlockView>;
 }
 
-function HalfBlockWithCover({styleName, children}) {
+function HalfBlockWithCover({
+  styleName,
+  children,
+}: {
+  styleName: string;
+  children: React.ReactNode;
+}) {
   return (
     <HalfBlock style={styles[styleName]}>
       <HalfBlock style={styles[styleName + 'Cover']} />
@@ -56,7 +68,7 @@ export default function HomeScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<StyleProps>({
   top: {
     backgroundColor: '#ffffff',
     alignItems: 'center',

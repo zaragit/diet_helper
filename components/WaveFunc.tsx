@@ -1,10 +1,18 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Animated, Easing, View} from 'react-native';
 import Svg, {Path} from 'react-native-svg';
+import {Styles, WaveProps} from '../types';
 
 const AnimatedSvg = Animated.createAnimatedComponent(Svg);
 
-export default function WaveFunc({H, waveParams, style}) {
+interface Props {
+  H: number;
+  waveParams: WaveProps[];
+  animated: boolean;
+  style: Styles;
+}
+
+export default function WaveFunc({H, waveParams, style}: Props) {
   const wave1Animation = useRef(new Animated.Value(0)).current;
   const wave2Animation = useRef(new Animated.Value(0)).current;
   const wave3Animation = useRef(new Animated.Value(0)).current;
@@ -53,7 +61,6 @@ export default function WaveFunc({H, waveParams, style}) {
               d={`M 0 0 Q ${T / 4} ${-A} ${T / 2} 0 T ${T} 0 T ${
                 (3 * T) / 2
               } 0 T ${2 * T} 0 T ${(5 * T) / 2} 0 T ${3 * T} 0 V ${H} H 0 Z`}
-              fill={fill}
               transform={`translate(0, ${A})`}
             />
           </AnimatedSvg>
