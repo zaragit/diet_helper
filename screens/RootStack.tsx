@@ -46,7 +46,7 @@ function RootStack() {
 
   return (
     <Stack.Navigator>
-      {user ? (
+      {/* {user ? (
         <>
           <Stack.Screen
             name="MainTab"
@@ -60,14 +60,14 @@ function RootStack() {
             name="Sign"
             component={SignScreen}
             options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Welcome"
-            component={WelcomeScreen}
-            options={{headerShown: false}}
-          />
-        </>
-      )}
+          /> */}
+      <Stack.Screen
+        name="Welcome"
+        component={WelcomeScreen}
+        options={{headerShown: false}}
+      />
+      {/* </>
+      )} */}
     </Stack.Navigator>
   );
 }

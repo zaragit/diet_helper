@@ -6,6 +6,7 @@ import {signOut} from '../lib/auth';
 import {createUser} from '../lib/users';
 import {Button, ButtonGroup, Input} from 'react-native-elements';
 import {RootStackParamList} from '../screens/RootStack';
+import {UserProfile} from '../types';
 
 const genderData = [
   {
@@ -20,67 +21,25 @@ const genderData = [
 
 type WelcomeScreenRouteProp = RouteProp<RootStackParamList, 'Welcome'>;
 
-export default function SetupProfile() {
-  const navigation = useNavigation();
-  const {params} = useRoute<WelcomeScreenRouteProp>();
+interface Props {
+  profile: UserProfile;
+  createChangeProfileHandler: (name: string) => (value: string) => void;
+}
 
-  const {setUser} = useUserContext();
-  const {id} = params || {};
-
-  const [profile, setProfile] = useState({
-    displayName: null,
-    age: null,
-    height: null,
-    weight: null,
-    gender: 0,
-  });
-
-  const createChangeProfileHandler = useCallback(
-    (name: string, numeric?: boolean) => (value: string) =>
-      setProfile({
-        ...profile,
-        [name]: numeric ? value.replace(/[^0-9]/g, '') : value,
-      }),
-    [profile],
-  );
-
-  const onSubmit = useCallback(() => {
-    const {displayName, age, height, weight} = profile;
-
-    if (!displayName || !age || !height || !weight) {
-      Alert.alert('실패', '입력되지 않은 항목이 존재합니다.');
-      return;
-    }
-
-    const newProfile = {
-      id,
-      displayName,
-      age,
-      height,
-      weight,
-    };
-
-    createUser(newProfile);
-    setUser(newProfile);
-  }, [profile, setUser, id]);
-
-  const onCancel = useCallback(() => {
-    signOut();
-    navigation.goBack();
-  }, [navigation]);
-
+export default function SetupProfile({
+  profile,
+  createChangeProfileHandler,
+}: Props) {
   return (
     <View style={styles.profileForm}>
       <ButtonGroup
         onPress={createChangeProfileHandler('gender')}
         selectedIndex={profile.gender}
-        button={genderData.map((data, index) => ({
-          element: () => (
-            <Text style={index === profile.gender && styles.whiteFont}>
-              {data.label}
-            </Text>
-          ),
-        }))}
+        buttons={genderData.map((data, index) => (
+          <Text style={index === profile.gender && styles.whiteFont}>
+            {data.label}
+          </Text>
+        ))}
         containerStyle={styles.select}
         buttonStyle={styles.disabledButton}
         selectedButtonStyle={styles.selectedButton}
@@ -96,38 +55,33 @@ export default function SetupProfile() {
 
       <Input
         placeholder="나이"
-        value={profile.age || ''}
+        value={profile.age?.toString()}
         inputContainerStyle={styles.input}
         rightIcon={<Text>세(만)</Text>}
         keyboardType="numeric"
-        onChangeText={createChangeProfileHandler('age', true)}
+        onChangeText={createChangeProfileHandler('age')}
         autoCompleteType={undefined}
       />
 
       <Input
         placeholder="키"
-        value={profile.height || ''}
+        value={profile.height?.toString()}
         inputContainerStyle={styles.input}
         rightIcon={<Text>cm</Text>}
         keyboardType="numeric"
-        onChangeText={createChangeProfileHandler('height', true)}
+        onChangeText={createChangeProfileHandler('height')}
         autoCompleteType={undefined}
       />
 
       <Input
         placeholder="몸무게"
-        value={profile.weight || ''}
+        value={profile.weight?.toString()}
         inputContainerStyle={styles.input}
         rightIcon={<Text>kg</Text>}
         keyboardType="numeric"
-        onChangeText={createChangeProfileHandler('weight', true)}
+        onChangeText={createChangeProfileHandler('weight')}
         autoCompleteType={undefined}
       />
-
-      <View style={styles.stepButtonWrapper}>
-        <Button style={styles.stepButton} title="취소" onPress={onCancel} />
-        <Button style={styles.stepButton} title="다음" onPress={onSubmit} />
-      </View>
     </View>
   );
 }
