@@ -2,6 +2,7 @@ import Constants from "expo-constants";
 
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: Constants.manifest?.extra?.apiKey,
@@ -15,7 +16,12 @@ const firebaseConfig = {
 // initialize firebase
 initializeApp(firebaseConfig);
 
+// initialize firebase
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
 // initialize auth
 const auth = getAuth();
 
-export { auth };
+export { app, db, auth };

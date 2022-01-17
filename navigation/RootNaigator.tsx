@@ -4,21 +4,29 @@ import React, { useEffect, useState } from "react";
 import Loading from "../components/molecules/Loading";
 import { useAuthContext } from "../contexts/AuthContext";
 import { subscribeAuth } from "../libs/Auth";
+import { getProfileByUid } from "../libs/Profile";
 import AppStack from "./AppStack";
 import AuthStack from "./AuthStack";
 
 function RootNavigator() {
-  const { user, setUser } = useAuthContext();
+  const { user, setUser, profile, setProfile } = useAuthContext();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // setTimeout(() => {
     const unsubscribeAuthStateChanged = subscribeAuth(
-      (authenticatedUser: User) => {
+      async (authenticatedUser: User) => {
         setUser(authenticatedUser);
+
+        if (authenticatedUser) {
+          setProfile(await getProfileByUid(authenticatedUser.uid));
+        }
+
         setLoading(false);
         return unsubscribeAuthStateChanged;
       }
     );
+    // }, 2400);
   }, [setUser]);
 
   if (loading) {
@@ -27,7 +35,7 @@ function RootNavigator() {
 
   return (
     <NavigationContainer>
-      {user ? <AppStack /> : <AuthStack />}
+      {user && profile ? <AppStack /> : <AuthStack />}
     </NavigationContainer>
   );
 }

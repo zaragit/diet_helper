@@ -9,6 +9,8 @@ import { AuthStackParamList } from "../navigation/AuthStack";
 import TitleHeader from "../components/molecules/TitleHeader";
 import SignButtons from "../components/organisms/SignButtons";
 import { signIn, signUp } from "../libs/Auth";
+import { getProfileByUid } from "../libs/Profile";
+import { useAuthContext } from "../contexts/AuthContext";
 
 const getErrorMassage = (code: string, isSignUp: boolean) => {
   switch (code) {
@@ -28,6 +30,7 @@ const getErrorMassage = (code: string, isSignUp: boolean) => {
 type Props = NativeStackScreenProps<AuthStackParamList, "Sign">;
 
 function SignScreen({ navigation, route }: Props) {
+  const { setProfile } = useAuthContext();
   const { isSignUp } = route.params || {};
 
   const [loading, setLoading] = useState(false);
@@ -53,7 +56,13 @@ function SignScreen({ navigation, route }: Props) {
         ? await signUp(email, password)
         : await signIn(email, password);
 
-      console.log(uid);
+      const profile = await getProfileByUid(uid);
+
+      if (profile) {
+        setProfile(profile);
+      } else {
+        navigation.navigate("Welcome");
+      }
     } catch (e: any) {
       Alert.alert("실패", getErrorMassage(e, isSignUp));
     } finally {
