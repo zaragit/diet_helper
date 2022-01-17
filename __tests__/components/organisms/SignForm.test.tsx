@@ -3,27 +3,6 @@ import { fireEvent, render, TextMatch } from "@testing-library/react-native";
 import SignForm from "../../../components/organisms/SignForm";
 
 describe("<SignForm />", () => {
-  test.each([["이메일"], ["패스워드"]])(
-    '"isSignUp === false" 일 때, placeholder가 "$source"인 Input이 랜더링된다.',
-    (source) => {
-      const isSignUp = true;
-
-      const { queryByPlaceholderText } = render(
-        <SignForm
-          form={{
-            email: "",
-            password: "",
-            confirmPassword: "",
-          }}
-          isSignUp={isSignUp}
-          createChangeTextHandler={() => () => {}}
-        />
-      );
-
-      expect(queryByPlaceholderText(source)).not.toBeNull();
-    }
-  );
-
   test.each([["이메일"], ["패스워드"], ["패스워드 확인"]])(
     '"isSignUp === true" 일 때, placeholder가 "$source"인 Input이 랜더링된다.',
     (source) => {
@@ -45,8 +24,8 @@ describe("<SignForm />", () => {
     }
   );
 
-  it("'isSignUp === true' 일 때, ['이메일', '패스워드', '패스워드 확인'] 3개의 Input이 랜더링 된다.", () => {
-    const isSignUp = true;
+  it('"isSignUp === false" 일 때, placeholder가 "패스워드 확인"인 Input이 랜더링되면 안된다.', () => {
+    const isSignUp = false;
 
     const { queryByPlaceholderText } = render(
       <SignForm
@@ -60,9 +39,7 @@ describe("<SignForm />", () => {
       />
     );
 
-    expect(queryByPlaceholderText("이메일")).not.toBeNull();
-    expect(queryByPlaceholderText("패스워드")).not.toBeNull();
-    expect(queryByPlaceholderText("패스워드 확인")).not.toBeNull();
+    expect(queryByPlaceholderText("패스워드 확인")).toBeNull();
   });
 
   test.each([["패스워드"], ["패스워드 확인"]])(

@@ -1,12 +1,59 @@
-import { StyleSheet, Text, View } from "react-native";
+import { useEffect, useRef } from "react";
+import { Animated, StyleSheet, Text, View } from "react-native";
 import Colors from "../../libs/Colors";
 
-function TitleHeader() {
+function TitleHeader({ animation = false }: { animation?: boolean }) {
+  const carbohydratePos = useRef(new Animated.Value(-100)).current;
+  const proteinPos = useRef(new Animated.Value(-100)).current;
+  const fatPos = useRef(new Animated.Value(100)).current;
+
+  const animate = (pos: Animated.Value, callback?: () => void) => {
+    Animated.timing(pos, {
+      toValue: 0,
+      delay: 100,
+      useNativeDriver: false,
+    }).start(callback);
+  };
+
+  useEffect(() => {
+    if (animation) {
+      animate(carbohydratePos, () => {
+        animate(proteinPos, () => {
+          animate(fatPos);
+        });
+      });
+    }
+  }, [animation, carbohydratePos, proteinPos, fatPos]);
+
   return (
     <View style={styles.title}>
-      <Text style={[styles.titleWord, { color: Colors.LIGHT_BLUE }]}>탄</Text>
-      <Text style={[styles.titleWord, { color: Colors.LIGHT_RED }]}>단</Text>
-      <Text style={[styles.titleWord, { color: Colors.LIGHT_YELLOW }]}>지</Text>
+      <Animated.Text
+        style={[
+          styles.titleWord,
+          { color: Colors.LIGHT_BLUE },
+          animation && { transform: [{ translateX: carbohydratePos }] },
+        ]}
+      >
+        탄
+      </Animated.Text>
+      <Animated.Text
+        style={[
+          styles.titleWord,
+          { color: Colors.LIGHT_RED },
+          animation && { transform: [{ translateY: proteinPos }] },
+        ]}
+      >
+        단
+      </Animated.Text>
+      <Animated.Text
+        style={[
+          styles.titleWord,
+          { color: Colors.LIGHT_YELLOW },
+          animation && { transform: [{ translateX: fatPos }] },
+        ]}
+      >
+        지
+      </Animated.Text>
     </View>
   );
 }

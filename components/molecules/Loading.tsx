@@ -5,15 +5,14 @@ import TitleHeader from "./TitleHeader";
 function Loading() {
   return (
     <View style={styles.wrapper}>
-      <TitleHeader />
+      <TitleHeader animation={true} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   wrapper: {
-    marginTop: 64,
-    height: 104,
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },

@@ -4,7 +4,7 @@ import Colors from "../../libs/Colors";
 
 function SpinLoading() {
   return (
-    <View style={styles.wrapper}>
+    <View style={[styles.wrapper]}>
       <ActivityIndicator size={32} color={Colors.BLACK} />
     </View>
   );
@@ -12,8 +12,7 @@ function SpinLoading() {
 
 const styles = StyleSheet.create({
   wrapper: {
-    marginTop: 64,
-    height: 104,
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },

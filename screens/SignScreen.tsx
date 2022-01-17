@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Alert, Keyboard, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import BasicButton from "../components/molecules/BasicButton";
 import Colors from "../libs/Colors";
@@ -8,6 +8,22 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { AuthStackParamList } from "../navigation/AuthStack";
 import TitleHeader from "../components/molecules/TitleHeader";
 import SignButtons from "../components/organisms/SignButtons";
+import { signIn, signUp } from "../libs/Auth";
+
+const getErrorMassage = (code: string, isSignUp: boolean) => {
+  switch (code) {
+    case "auth/email-already-in-use":
+      return "이미 가입된 이메일입니다.";
+    case "auth/wrong-password":
+      return "잘못된 비밀번호입니다.";
+    case "auth/user-root-found":
+      return "존재하지 않는 계정입니다.";
+    case "auth/invalid-email":
+      return "유효하지 않은 이메일 주소입니다.";
+    default:
+      return `${isSignUp ? "가입" : "로그인"} 실패`;
+  }
+};
 
 type Props = NativeStackScreenProps<AuthStackParamList, "Sign">;
 
@@ -25,7 +41,25 @@ function SignScreen({ navigation, route }: Props) {
     setForm({ ...form, [name]: value });
   };
 
-  const onSubmit = () => {};
+  const onSubmit = async () => {
+    Keyboard.dismiss();
+
+    const { email, password } = form;
+
+    setLoading(true);
+
+    try {
+      const { uid } = isSignUp
+        ? await signUp(email, password)
+        : await signIn(email, password);
+
+      console.log(uid);
+    } catch (e: any) {
+      Alert.alert("실패", getErrorMassage(e, isSignUp));
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <SafeAreaView style={styles.container}>

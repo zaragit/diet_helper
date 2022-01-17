@@ -26,29 +26,31 @@ function SignButtons({ isSignUp, loading, onSubmit }: Props) {
   const primaryTitle = isSignUp ? "회원가입" : "로그인";
   const secondaryTitle = isSignUp ? "로그인" : "회원가입";
 
-  if (loading) {
-    return <SpinLoading />;
-  }
-
   return (
-    <View>
-      <BasicButton width={240} title={primaryTitle} onPress={onSubmit} />
-      <BasicButton
-        width={240}
-        title={secondaryTitle}
-        onPress={() =>
-          isSignUp
-            ? navigation.goBack()
-            : navigation.push("Sign", { isSignUp: true })
-        }
-      />
-      {!isSignUp && (
-        <View style={styles.forgotPassword}>
-          <Text>비밀번호를 잊어버리셨나요? </Text>
-          <Pressable onPress={() => navigation.push("ForgotPassword")}>
-            <Text style={styles.underline}>비밀번호 찾기</Text>
-          </Pressable>
-        </View>
+    <View style={{ height: 76 }}>
+      {loading ? (
+        <SpinLoading />
+      ) : (
+        <>
+          <BasicButton width={240} title={primaryTitle} onPress={onSubmit} />
+          <BasicButton
+            width={240}
+            title={secondaryTitle}
+            onPress={() =>
+              isSignUp
+                ? navigation.goBack()
+                : navigation.push("Sign", { isSignUp: true })
+            }
+          />
+          {!isSignUp && (
+            <View style={styles.forgotPassword}>
+              <Text>비밀번호를 잊어버리셨나요? </Text>
+              <Pressable onPress={() => navigation.push("ForgotPassword")}>
+                <Text style={styles.underline}>비밀번호 찾기</Text>
+              </Pressable>
+            </View>
+          )}
+        </>
       )}
     </View>
   );
