@@ -1,14 +1,20 @@
 import React, { useState } from "react";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ProgressSteps, ProgressStep } from "react-native-progress-steps";
 import Colors from "../libs/Colors";
-import CalendarPicker from "../components/organisms/CalendarPicker.tsx";
+import CalendarPicker from "../components/organisms/CalendarPicker";
 import { traslateInternationalAge } from "../libs/Date";
+import WeightScale from "../components/organisms/WeightScale";
+import { Dimensions } from "react-native";
+
+const windowHeight = Dimensions.get("window").height;
+const windowWidth = Dimensions.get("window").width;
 
 function WelcomeScreen() {
   const [form, setForm] = useState({
     age: new Date(),
+    weight: 60,
   });
 
   const progressStepsStyle = {
@@ -43,11 +49,10 @@ function WelcomeScreen() {
     };
   };
 
-  const createChangeTextHandler = (name: string) => (value: string | Date) => {
-    setForm({ ...form, [name]: value });
-  };
-
-  const onSubmit = () => {};
+  const createChangeTextHandler =
+    (name: string) => (value: string | Date | number) => {
+      setForm({ ...form, [name]: value });
+    };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -63,10 +68,18 @@ function WelcomeScreen() {
           </Text>
         </ProgressStep>
         <ProgressStep {...commonProps()}>
-          <Text>step2</Text>
+          <Text style={[styles.text]}>몸무게가 어떻게 되시나요?</Text>
+          <WeightScale
+            width={windowWidth}
+            height={100}
+            maxWeight={300}
+            minWeight={20}
+            startWeight={form.weight}
+            setWeight={createChangeTextHandler("weight")}
+          />
         </ProgressStep>
-        <ProgressStep {...commonProps()}>
-          <Text>step3</Text>
+        <ProgressStep {...commonProps(true, false)}>
+          <Text style={[styles.text]}>키를 입력해 주세요!</Text>
         </ProgressStep>
         <ProgressStep {...commonProps(false, true)}>
           <Text>step4</Text>
@@ -95,7 +108,7 @@ const styles = StyleSheet.create({
   processButtonText: {
     color: Colors.WHITE,
   },
-  text: { fontWeight: "bold", fontSize: 20 },
+  text: { fontWeight: "bold", fontSize: 20, marginBottom: 50 },
 });
 
 export default WelcomeScreen;
