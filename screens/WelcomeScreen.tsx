@@ -7,6 +7,7 @@ import CalendarPicker from "../components/organisms/CalendarPicker";
 import { traslateInternationalAge } from "../libs/Date";
 import WeightScale from "../components/organisms/WeightScale";
 import { Dimensions } from "react-native";
+import HeightScale from "../components/organisms/HeightScale";
 
 const windowHeight = Dimensions.get("window").height;
 const windowWidth = Dimensions.get("window").width;
@@ -15,6 +16,7 @@ function WelcomeScreen() {
   const [form, setForm] = useState({
     age: new Date(),
     weight: 60,
+    height: 170,
   });
 
   const progressStepsStyle = {
@@ -54,21 +56,29 @@ function WelcomeScreen() {
       setForm({ ...form, [name]: value });
     };
 
+  const calculateBMI = () => {
+    const { weight, height } = form;
+    return weight / (height / 100) / (height / 100);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ProgressSteps {...progressStepsStyle}>
         <ProgressStep {...commonProps(true, false)}>
           <Text style={styles.text}>나이를 입력해 주세요!</Text>
+          <Text style={{ fontSize: 30, marginBottom: 20 }}>
+            만 {traslateInternationalAge(form.age)}세
+          </Text>
           <CalendarPicker
             date={form.age}
             onChange={createChangeTextHandler("age")}
           />
-          <Text style={styles.text}>
-            만 {traslateInternationalAge(form.age)}세
-          </Text>
         </ProgressStep>
         <ProgressStep {...commonProps()}>
           <Text style={[styles.text]}>몸무게가 어떻게 되시나요?</Text>
+          <Text style={{ fontSize: 30, marginBottom: 20 }}>
+            {form.weight.toFixed(2).replace(".00", "")} kg
+          </Text>
           <WeightScale
             width={windowWidth}
             height={100}
@@ -78,11 +88,21 @@ function WelcomeScreen() {
             setWeight={createChangeTextHandler("weight")}
           />
         </ProgressStep>
-        <ProgressStep {...commonProps(true, false)}>
-          <Text style={[styles.text]}>키를 입력해 주세요!</Text>
+        <ProgressStep {...commonProps()}>
+          <Text style={[styles.text]}>키를 입력해 주세요!!</Text>
+          <Text style={{ fontSize: 30, marginBottom: 20 }}>
+            {form.height.toFixed(2).replace(".00", "")} cm
+          </Text>
+          <HeightScale
+            width={300}
+            height={500}
+            scaleProps={{ initHeight: form.height }}
+            setHeight={createChangeTextHandler("height")}
+          />
         </ProgressStep>
         <ProgressStep {...commonProps(false, true)}>
           <Text>step4</Text>
+          <Text>당신의 BMI 지수는 {calculateBMI()} 입니다.</Text>
         </ProgressStep>
       </ProgressSteps>
     </SafeAreaView>
@@ -108,7 +128,8 @@ const styles = StyleSheet.create({
   processButtonText: {
     color: Colors.WHITE,
   },
-  text: { fontWeight: "bold", fontSize: 20, marginBottom: 50 },
+  text: { fontWeight: "bold", fontSize: 20, marginBottom: 20 },
+  scaleText: { fontSize: 40, marginTop: 30 },
 });
 
 export default WelcomeScreen;

@@ -12,7 +12,6 @@ function YearPicker({ date, onChange }: Props) {
   const year = date.getFullYear();
   const [startYear, setStartYear] = useState(year - (year % 10));
   const headerText = `${startYear - 1} - ${startYear + 10}`;
-  console.log("year render");
 
   return (
     <Layout

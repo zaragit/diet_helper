@@ -8,15 +8,12 @@ import Animated, {
   runOnJS,
   useAnimatedGestureHandler,
   useAnimatedStyle,
-  useDerivedValue,
   useSharedValue,
   withDecay,
-  withTiming,
 } from "react-native-reanimated";
 import Svg, { Path } from "react-native-svg";
 import Colors from "../../libs/Colors";
 import { LinearGradient } from "expo-linear-gradient";
-import { ReText } from "react-native-redash";
 
 const SCALE_UNIT_WIDTH = 20;
 
@@ -65,12 +62,7 @@ function Scale2({
   const scale = useSharedValue(
     subtractWhiteSpace(startWeight * SCALE_UNIT_WIDTH, width)
   );
-  const scaleText = useDerivedValue(
-    () =>
-      scale2Weight(scale.value, width, minWeight)
-        .toFixed(2)
-        .replace(".00", "") + " KG"
-  );
+
   const scaleStyle = useAnimatedStyle(() => ({
     transform: [{ translateX: -scale.value }],
   }));
@@ -84,6 +76,8 @@ function Scale2({
     },
     onActive: (event, context) => {
       scale.value = context.startX - event.translationX;
+
+      runOnJS(setWeight)(scale2Weight(scale.value, width, minWeight));
 
       context.slowly = Math.abs(event.velocityX) < 1000;
     },
@@ -158,7 +152,6 @@ function Scale2({
           fill={Colors.RED}
         />
       </Svg>
-      <ReText style={styles.scaleText} text={scaleText} />
     </>
   );
 }
@@ -181,7 +174,6 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontWeight: "bold",
   },
-  scaleText: { fontSize: 40, marginTop: 30 },
 });
 
 export default Scale2;
