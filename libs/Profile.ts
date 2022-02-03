@@ -12,25 +12,24 @@ import {
 } from "firebase/firestore";
 import { db } from "./Firebase";
 
-export interface Profile extends DocumentData {
+export interface Profile {
   age: string;
   weight: number;
   height: number;
-  gender: string;
+  goal: number;
+  macro: number[];
 }
 
 export async function createProfile(
   uid: string,
-  age: string,
-  gender: string,
-  weight: number,
-  height: number
+  { age, weight, height, goal, macro }: Profile
 ) {
   await setDoc(doc(db, "profiles", uid), {
     age,
-    gender,
     weight,
     height,
+    goal,
+    macro,
   });
 }
 
